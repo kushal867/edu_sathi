@@ -1,0 +1,217 @@
+/* ============================================================
+   RESPONSIVE.CSS
+   ============================================================ */
+
+
+/* ====================================================
+   ≤ 1024px  — Tablet / small laptop
+   ==================================================== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 48px;
+  }
+
+  /* Hero: stack single column */
+  .hero {
+    padding: 60px 48px;
+    grid-template-columns: 1fr;
+  }
+  .hero-right { display: none; }
+
+  .hero-headline { font-size: 44px; }
+
+  /* Stats: 2×2 grid */
+  .stats-bar {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .stat-divider { display: none; }
+  .stat-item {
+    padding: 24px 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .stat-item:nth-child(4) { border-right: none; }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  /* Section paddings */
+  .how-works,
+  .colleges-section,
+  .testimonials-section,
+  .cta-section { padding: 64px 48px; }
+
+  .ai-section {
+    padding: 64px 48px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .global-section,
+  .prep-hostel-section { padding: 64px 48px; }
+
+  /* Footer: 2 columns */
+  .footer { padding: 48px 48px 28px; }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+
+/* ====================================================
+   ≤ 768px  — Mobile / small tablet
+   ==================================================== */
+@media (max-width: 768px) {
+
+  /* ---- Navbar ---- */
+  .navbar {
+    padding: 0 24px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* Hide links and right by default */
+  .nav-links { display: none; }
+  .nav-right  { display: none; }
+
+  /* Show hamburger */
+  .nav-hamburger { display: flex; }
+
+  /* Mobile nav drawer */
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0 16px;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(15, 52, 96, 0.08);
+  }
+
+  .nav-toggle:checked ~ .nav-links a {
+    display: block;
+    padding: 12px 24px;
+    border-bottom: none;
+    width: 100%;
+  }
+
+  /* ---- Hero ---- */
+  .hero { padding: 40px 24px; }
+  .hero-headline { font-size: 36px; }
+
+  .hero-search-bar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+    border-radius: var(--radius);
+  }
+  .hsb-left,
+  .hsb-middle { width: 100%; padding: 4px 8px; }
+  .hsb-divider { display: none; }
+  .hsb-btn     { width: 100%; margin-right: 0; border-radius: var(--radius); }
+
+  /* ---- Stats ---- */
+  .stat-item   { padding: 18px 24px; }
+  .stat-num    { font-size: 22px; }
+  .stat-label  { font-size: 11px; }
+
+  /* ---- How it works ---- */
+  .how-works   { padding: 48px 24px; }
+  .steps-grid  {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .steps-grid::before { display: none; }
+
+  /* ---- AI section ---- */
+  .ai-section { padding: 48px 24px; gap: 36px; }
+  .ai-heading { font-size: 28px; }
+
+  /* ---- Colleges ---- */
+  .colleges-section { padding: 48px 24px; }
+  .colleges-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .college-card {
+    min-width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* ---- Global ---- */
+  .global-section { padding: 48px 24px; }
+  .global-grid    { grid-template-columns: 1fr; margin-top: 32px; }
+
+  /* ---- Prep + Hostel ---- */
+  .prep-hostel-section {
+    padding: 48px 24px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* ---- Testimonials ---- */
+  .testimonials-section { padding: 48px 24px; }
+  .testimonials-grid    { grid-template-columns: 1fr; }
+
+  /* ---- CTA ---- */
+  .cta-section  { padding: 48px 24px; }
+  .cta-heading  { font-size: 28px; }
+
+  /* ---- Footer ---- */
+  .footer       { padding: 40px 24px 24px; }
+  .footer-top   { grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .section-row-header { flex-direction: column; gap: 4px; }
+}
+
+
+/* ====================================================
+   ≤ 480px  — Small phones
+   ==================================================== */
+@media (max-width: 480px) {
+  .navbar { padding: 0 20px; }
+
+  .hero { padding: 28px 20px; }
+  .hero-headline { font-size: 28px; }
+
+  .stats-bar   { grid-template-columns: 1fr 1fr; }
+  .stat-num    { font-size: 20px; }
+
+  .how-works,
+  .ai-section,
+  .colleges-section,
+  .global-section,
+  .prep-hostel-section,
+  .testimonials-section { padding: 40px 20px; }
+
+  .cta-section  { padding: 44px 20px; }
+  .cta-heading  { font-size: 26px; }
+  .cta-btns     { flex-direction: column; gap: 12px; }
+  .btn-cta-primary,
+  .btn-cta-outline { width: 100%; text-align: center; }
+
+  .footer     { padding: 36px 20px 20px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+
+  .section-title { font-size: 26px; }
+
+  .hero-search-bar { border-radius: var(--radius); }
+
+  .ai-heading { font-size: 26px; }
+}
